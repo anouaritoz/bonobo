@@ -1,0 +1,52 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Anouar
+ * Date: 07/07/2017
+ * Time: 06:53
+ */
+
+namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+
+
+/**
+* @ORM\Entity
+* @ORM\Table(name="freinds_list")
+*/
+class FriendsList
+{
+
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $age;
+
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $famille;
+
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $race;
+
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nourriture;
+
+
+}

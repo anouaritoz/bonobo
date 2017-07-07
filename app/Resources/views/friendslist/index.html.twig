@@ -1,0 +1,46 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Friendslists list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Age</th>
+                <th>Famille</th>
+                <th>Race</th>
+                <th>Nourriture</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for friendsList in friendsLists %}
+            <tr>
+                <td><a href="{{ path('friendslist_show', { 'id': friendsList.id }) }}">{{ friendsList.id }}</a></td>
+                <td>{{ friendsList.age }}</td>
+                <td>{{ friendsList.famille }}</td>
+                <td>{{ friendsList.race }}</td>
+                <td>{{ friendsList.nourriture }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('friendslist_show', { 'id': friendsList.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('friendslist_edit', { 'id': friendsList.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('friendslist_new') }}">Create a new friendsList</a>
+        </li>
+    </ul>
+{% endblock %}
